@@ -97,7 +97,7 @@ register_deactivation_hook( __FILE__, 'bl_deactivate' );
 function bl_deactivate() {
     $timestamp = wp_next_scheduled( 'bl_cron_hook' );
     wp_unschedule_event($timestamp, 'bl_cron_hook' );
-    echo '<pre>'; var_dump( _get_cron_array()); echo '</pre>';   
+    //echo '<pre>'; var_dump( _get_cron_array()); echo '</pre>';   
 }
 
 
@@ -105,5 +105,5 @@ function bl_deactivate() {
  * Simple helper function that prints out all existing tasks in the wp-cron list
  */
 function bl_print_tasks() {
-    echo '<pre>'; print_r(_get_cron_array());
+    echo '<pre>'; print_r(_get_cron_array()); echo '</pre>';
 }
